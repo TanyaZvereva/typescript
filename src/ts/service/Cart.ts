@@ -11,11 +11,12 @@ export default class Cart {
         return [...this._items];
     }
     fullPrice(): number {
-        let summa = 0
-        for (const item of this._items) {
-            summa += item.price
-        }
-        return summa
+        // let summa = 0
+        // for (const item of this._items) {
+        //     summa += item.price
+        // }
+        // return summa
+        return this._items.reduce((acc, value) => acc + value.price, 0)
     }
     priceWithDiscount(discount: number): number {
         let summa = this.fullPrice()
